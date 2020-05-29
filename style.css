@@ -370,7 +370,7 @@ nav{
         display: block;
     }
     .header-image{
-        display: none;
+        margin-top: 2rem;
     }
     .services{
         height: 100%;
