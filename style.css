@@ -431,5 +431,14 @@ nav{
 }
 
 @media (max-width: 375px){
-
+    .aboutUs{
+        display: block;
+    }
+    
+    .aboutUs-text{
+        width: 100%;
+    }
+    .aboutUs-image{
+        width: 100%;
+    }
 }
