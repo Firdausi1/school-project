@@ -398,6 +398,17 @@ nav{
     .button-secondary{
         padding: .2rem 1rem;
     }
+    .aboutUs{
+        display: block;
+    }
+    
+    .aboutUs-text{
+        width: 100%;
+    }
+    .aboutUs-image{
+        margin-bottom: 2rem;
+        width: 100%;
+    }
     .testimonials-content{
         display: block;
     }
@@ -426,20 +437,6 @@ nav{
         display: block;
     }
     .footer-box{
-        width: 100%;
-    }
-}
-
-@media (max-width: 375px){
-    .aboutUs{
-        display: block;
-    }
-    
-    .aboutUs-text{
-        width: 100%;
-    }
-    .aboutUs-image{
-        margin-bottom: 2rem;
         width: 100%;
     }
 }
