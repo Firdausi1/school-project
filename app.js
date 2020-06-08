@@ -1,13 +1,24 @@
-let menuButton = document.querySelector(".nav-btn");
-let menu = document.querySelector(".nav-links");
-let logo = document.querySelector(".nav-logo");
-let nav = document.querySelector("nav")
+const navSlide = () => {
+    const burger = document.querySelector('.nav-btn')
+    const nav = document.querySelector('.nav-links')
+    const navLinks = document.querySelectorAll('.nav-links li')
 
-menuButton.addEventListener("click",function(){
-    menuButton.textContent = 'o'
-    menu.style.display = 'block'
-    menu.style.float = 'none'
-    menu.style.position = 'absolute'
-    menu.style.textAlign = 'left'
-    nav.style.flexDirection = 'row-reverse'
-})
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active')
+
+        navLinks.forEach((link, index) => {
+            if(link.style.animation){
+                link.style.animation= ''
+            }
+            else{
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index/7+0.5}s`
+            }
+        })
+        //burger animation
+        burger.classList.toggle('toggle')
+    })
+    //animate links
+   
+}
+
+navSlide();

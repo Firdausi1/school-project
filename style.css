@@ -1,5 +1,10 @@
 /*#f7f7f8
 rgba(41,31,113);*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 :root{
     font-size: 16px;
     height: 100%;
@@ -82,10 +87,11 @@ header{
 
 nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     text-transform: uppercase;
-    padding-top: 2rem;
     color: white;
+    min-height: 8vh;
     font-size: .8rem;
     font-weight: 300;
 }
@@ -105,6 +111,15 @@ nav{
 
 .nav-btn{
     display: none;
+}
+
+.nav-btn div{
+    width: 1.5rem;
+    height: 2px;
+    background-color: white;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .menu{
@@ -370,21 +385,57 @@ nav{
 @media (max-width: 425px){
     body{
         width: 100%;
+        overflow-x: hidden;
+    }
+    header{
+        width: 100%;
     }
     nav{
-        display: block;
-        position: relative;
-    }
-    .nav-logo{
-        display: block;
-        float: left;
+        background-color: rgba(35, 28, 83, 0.8);
+
+        width: 100%;
+        position: fixed;
+        top: 0;
     }
     .nav-links{
-        display: none;
+        position: absolute;
+        right: 0;
+        height: 92vh;
+        top: 8vh;
+        background-color: rgba(35, 28, 83, 0.8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-active{
+        transform: translateX(0);
+    }
+    .nav-links li{
+        opacity: 0;
     }
     .nav-btn{
         display: block;
-        float: right;
+    }
+    @keyframes navLinkFade {
+        from{
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+    .toggle .line1{
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2{
+        opacity: 0;
+    }
+    .toggle .line3{
+        transform: rotate(45deg) translate(-5px, -6px);
     }
     .header-text h1{
         margin-top: 3.5rem;
@@ -393,6 +444,10 @@ nav{
     .header{
         height: 100%;
         display: block;
+        width: 85%;
+        padding-top: 2rem;
+        margin: 0 auto;
+        top: 8vh;
     }
     .header-image{
         display: none;
